@@ -1,0 +1,48 @@
+<!-- <ion-header> -->
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-grid class="ion-padding ion-margin-start">
+      <ion-row>
+        <ion-col size='2'>
+          <Strong>Recent Projects</Strong>
+        </ion-col>
+        <ion-col size='6'></ion-col>
+        <ion-col style="background-color: gray;" size='1'>
+          <ion-text style="font-size: small;">Date Created</ion-text>
+        </ion-col>
+        <ion-col size='3'>
+          <ion-searchbar placeholder="Search"></ion-searchbar>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+  <ion-item-divider color='medium'></ion-item-divider>
+<!-- </ion-header> -->
+
+<ion-content>
+  <ion-grid class="ion-padding ion-margin-start">
+    <ion-row>
+      <ion-col class="col" size='2'>
+        <ion-card style="color: white">
+          <ion-img (click)="createProject()" style="padding: 20%;" src="assets/add.png"></ion-img>
+          <ion-card-header>
+            <ion-card-title><Strong style="font-size: small;">Destination</Strong></ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+
+      <ng-container *ngIf="dataS.projects.length > 0">
+        <ion-col *ngFor="let p of dataS.projects" class="col" size='2'>
+          <ion-card style="color: white">
+            <ion-img id='newProject' [src]="'data:' + p.img.contentType + ';base64, ' + arrayBufferToBase64(p.img.file.data)"></ion-img>
+            <ion-card-header>
+              <ion-card-title><Strong style="font-size: small;">{{ p.name }}</Strong></ion-card-title>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>  
+      </ng-container>
+    </ion-row>
+  </ion-grid>
+</ion-content>

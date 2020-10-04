@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>Add Project</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="onCancel()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-text-center ion-padding">
+  <ion-item class="ion-margin">
+    <ion-label position="fixed">Project Name</ion-label>
+    <ion-input [(ngModel)]="projectName"></ion-input>
+  </ion-item>
+
+  <ion-item class="ion-margin">
+    <ion-button
+      color="primary"
+      type="button"
+      (click)="fileUpload.click()"
+      style="margin: 1em 1em"
+      >Upload Image</ion-button
+    >
+    <input
+      type="file"
+      #fileUpload
+      hidden="true"
+      accept="image/*"
+      (change)="handleFileInput($event.target.files)"
+    />
+
+    <ion-label slot="end" *ngIf="fileName">{{fileName}}</ion-label>
+  </ion-item>
+
+  <ion-button (click)="createProject()">CREATE</ion-button>
+</ion-content>

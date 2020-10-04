@@ -1,0 +1,42 @@
+ion-content, ion-toolbar {
+    --ion-background-color: #282828;
+    --ion-text-color: white;
+}
+
+ion-card-subtitle, ion-card-title {
+    color: white
+}
+
+ion-toolbar {
+    height: 12vh;
+    padding-top: 1%;
+}
+
+ion-item-divider{
+  margin-top: 0px;
+  min-height: 0.1px !important;
+}
+
+ion-row{
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+ion-searchbar {
+    --color: white;
+    border: 1px solid white;
+    // border-radius: 5%;
+    box-shadow: none !important;
+    padding: 0;
+    transform: scale(0.7);
+    // width: 120%;
+}
+
+.col {
+    margin: 1.5%;
+}
+
+ion-card > ion-img {
+    height: 20vh;
+}
