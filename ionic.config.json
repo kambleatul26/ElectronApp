@@ -1,0 +1,7 @@
+{
+  "name": "FPTask",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
